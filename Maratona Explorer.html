@@ -7,9 +7,9 @@
     <title>Document</title>
 
     <style>
-                * { /*seletor universal é o asterísco*/
+                * {
             box-sizing: border-box;
-            margin: 0 /*atribui valor a todas as margens*/
+            margin: 0;
         }
         body {
             color: whitesmoke;
@@ -21,7 +21,7 @@
             margin-top: 100px;
             width: 80%;
             max-width: 400px;
-            margin-inline: auto; /*margem direita e esquerda*/
+            margin-inline: auto;
         }
         h1 {
             margin-top: 40px;
@@ -40,7 +40,7 @@
             border-radius: 5px
         }
         input {
-            margin-bottom: 20px
+            margin-bottom: 20px;
         }
         button {
             color: white;
@@ -48,7 +48,6 @@
             border: none;
             transition: filter 0.5s;
         }
-        /*pseudo-class: hover: quando passar o mouse em cima do botão*/
         button:hover {
             filter: brightness(2.5);
             cursor: pointer;
@@ -102,7 +101,6 @@ const respostas = [
             "Sinais apontam que sim.",
 ]
 
-//clicar em fazer pergunta
 function fazerPergunta() {
 
   if(inputPergunta.value == "") {
@@ -115,14 +113,11 @@ buttonPerguntar.setAttribute("disabled", true)
 
   const pergunta = "<div>" + inputPergunta.value + "</div>"
 
-  //gerar número aleatório
   const totalRespostas = respostas.length
   const numeroAletorio = Math.floor(Math.random() * totalRespostas)
 
-  //numeroAleatorio entra no array de respostas
   elementoResposta.innerHTML = pergunta + respostas[numeroAletorio]
     elementoResposta.style.opacity = 1;
-  //sumir a resposta depois de 3s
   setTimeout(function() {
     elementoResposta.style.opacity = 0;
   buttonPerguntar.removeAttribute('disabled')
